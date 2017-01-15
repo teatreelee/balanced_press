@@ -9,17 +9,15 @@ $(document).ready(function() {
 
     const $scale = $('#scale'),
         scalePosition = $scale.position();
-    chrome.tabs.query({ currentWindow: true, active: true }, function(tabs) {
+    chrome.tabs.query({ currentWindow: true, active: true }, function(tabs, status) {
         // console.log(tabs[0]);
-        let x = $.get("https://balancedpress.herokuapp.com/v1/bias?url=" + tabs[0].url, function(data) {
+        let x = $.get("https://balancedpress.herokuapp.com/v1/bias?url=" + tabs[0].url, function(data, status) {
             let score = Math.round(data['score'] * 100);
             $("#score-num").text(findNum(score));
-            $("#title").text(data["title"]);
-            $('#src').text(data["authors"][-1] + " - Published " + data["date"]);
+            $("#title").text(tabs[0].title);
+            $('#src').text("Published " + data["date"]);
             setScoreCss(score);
             setPointerCss(score);
-            // parseTitleAndSource(tabs[0].title);
-            // return score;
         });
 
 
@@ -53,7 +51,6 @@ $(document).ready(function() {
         } else {
             ret = x;
         }
-        console.log('num', ret);
         return ret;
     }
 
@@ -88,13 +85,11 @@ $(document).ready(function() {
     }
 
     function parseTitleAndSource(str){
-        console.log(str);
         let re = /-|\|/gi;
         // let separators = str.match(/-|\|/gi);
         let idx = str.match(/-|\|/gi).index;
         // $("#title").text(title);
         let separators = re.exec(str);
-        console.log('sep', separators);
     }
 
 });
