@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Balanced Press</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="srcs/jquery.min.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body id="popup">
+    <div class="header">&#x25CF; Balanced Press</div>
+    <div class='src-info'>
+        <div id="title">{{Title}}</div>
+        <div id="src">{{Name of Source}} - Published {{date}}</div>
+    </div>
+    <div class="checker">
+        <div class="score">
+            <span id="score-num"></span>
+            <span id="pointer">&#x25BC;</span>
+        </div>
+        <div id="scale">
+            <div class="more-left"></div>
+            <div class ="blank"></div>
+            <div class="less-left"></div>
+            <div class ="blank"></div>
+            <div class="less-right"></div>
+            <div class ="blank"></div>
+            <div class="more-right"></div>
+        </div>
+        <div class="indicator">
+            <span class="liberal">Liberal</span>
+            <span class="conservative">Conservative</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
