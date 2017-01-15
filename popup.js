@@ -44,7 +44,9 @@ $(document).ready(function() {
 
     function findNum(x) {
         let ret;
-        if (x === 50) {
+        if (x < 50) {
+            ret = 50 - x;
+        } else if (x === 50) {
             ret = 0;
         } else if (x > 50) {
             ret = x - 50;
