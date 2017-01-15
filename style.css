@@ -9,7 +9,8 @@
 }
 
 body {
-    background-color: #F3F3F3;
+    /* background-color: #F3F3F3; */
+    background-color: #eff0ef;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -103,21 +104,25 @@ body {
 
 .liberal {
     float: left;
+    padding-left: 15px;
 }
 
 .conservative {
     float: right;
+    padding-right: 18px;
 }
 
 .indicator {
     vertical-align: bottom;
-    line-height: 160px;
+    line-height: 100px;
+    color: #999;
+    font-weight:bold;
 }
 #popup {
     min-width: 386px;
     width: 386px;
-    min-height: 240px;
-    height: 240px;
+    min-height: 200px;
+    height: 200px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
