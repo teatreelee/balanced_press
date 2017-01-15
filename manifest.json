@@ -1,5 +1,4 @@
 {
-  // Required
   "manifest_version": 2,
   "name": "Balanced Press",
   "version": "1.0",
@@ -7,20 +6,15 @@
   "icons": {
     "128": "icon.png"
   },
-
-  // Pick one (or none)
   "browser_action": {
     "default_title": "Balanced Press",
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
-
-  // Optional
   "background": {
     "scripts": [
-      "popup.js"
+      "eventpage.js"
     ],
-    // Recommended
     "persistent": false
   },
   "permissions": [
@@ -28,5 +22,4 @@
     "storage",
     "https://balancedpress.herokuapp.com/"
   ]
-
 }
