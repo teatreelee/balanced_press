@@ -12,11 +12,12 @@ $(document).ready(function() {
     chrome.tabs.query({ currentWindow: true, active: true }, function(tabs) {
         // console.log(tabs[0]);
         let x = $.get("https://balancedpress.herokuapp.com/v1/bias?url=" + tabs[0].url, function(data) {
-            console.log(data);
-            // let score = Math.round(data * 100);
-            // $("#score-num").text(findNum(score));
-            // setScoreCss(score);
-            // setPointerCss(score);
+            let score = Math.round(data['score'] * 100);
+            $("#score-num").text(findNum(score));
+            $("#title").text(data["title"]);
+            $('#src').text(data["authors"][-1] + " - Published " + data["date"]);
+            setScoreCss(score);
+            setPointerCss(score);
             // parseTitleAndSource(tabs[0].title);
             // return score;
         });
